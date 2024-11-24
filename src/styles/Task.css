@@ -1,0 +1,42 @@
+body {
+  font-size: 1.5rem;
+}
+
+.container-add-task {
+  display: flex;
+  gap: 16px;
+}
+
+.container-btn {
+  display: flex;
+  
+}
+
+p {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.container-add-task > button {
+  width: 5.5em;
+} 
+
+.btn-add-task {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-add-task button {
+  font-size: 1.2rem;
+  padding: 8px;
+  border-radius: 3px;
+  border: none;
+  margin-top: 15px;
+  background-color: red;
+  color: white;
+}
+
+li {
+  list-style: none;
+}

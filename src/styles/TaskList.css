@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+.container-xl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px;
+  width: 50vw;
+  gap: 60px;
+  
+}
+.container-add-task {
+
+  display: flex;
+  flex-direction: column;
+
+}

@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { initialState, Task } from "../types/tasks.type";
+import { initialState, TaskProps } from "../types/tasks.type";
 
 const tasksSlice = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
-    addTask: (state, actions:PayloadAction<Task[]>)=> {
-
+    addTask: (state, actions:PayloadAction<TaskProps>)=> {
+      state.data.push(actions.payload);
     },
       updateTask: (state, actions)=> {
 

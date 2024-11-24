@@ -1,4 +1,4 @@
-export interface Task {
+export interface TaskProps {
   name: string,
   description: string,
   date: string,
@@ -6,7 +6,7 @@ export interface Task {
 }
 
 interface TaskState {
-  data: Task[] 
+  data: TaskProps[] 
 }
 
 export const initialState:TaskState = {
