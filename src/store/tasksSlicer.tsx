@@ -5,14 +5,14 @@ const tasksSlice = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
-    addTask: (state, actions:PayloadAction<TaskProps>)=> {
-      state.data.push(actions.payload);
+    addTask: (state, action:PayloadAction<TaskProps>)=> {
+      state.data.push(action.payload);
     },
       updateTask: (state, actions)=> {
 
     },
-      deleteTask: (state, actions:PayloadAction<number>)=> {
-
+      deleteTask: (state, action:PayloadAction<number>)=> {
+        
     },
       toggleComplete: (state, actions)=> {
 

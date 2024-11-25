@@ -9,11 +9,24 @@ body {
   padding: 80px;
   width: 50vw;
   gap: 60px;
-  
 }
-.container-add-task {
 
+.container-add-task {
   display: flex;
   flex-direction: column;
+  width: 30vw;
+}
+p {
+  display: flex;
+  flex-direction: column;
+}
 
+p + p {
+  margin-top: 36px;
+}
+
+.btn-add-task {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
 }

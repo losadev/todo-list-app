@@ -1,4 +1,4 @@
-import TasksList from "./TasksList";
+import TasksList from "./AddTasks";
 
 const Dashboard = () => {
   return (

@@ -5,7 +5,7 @@ export interface TaskProps {
   completed: boolean
 }
 
-interface TaskState {
+export interface TaskState {
   data: TaskProps[] 
 }
 

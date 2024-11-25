@@ -6,7 +6,7 @@ const NavBar = () => {
     <nav className="menu">
       <NavLink to={'/'} className={({isActive})=> isActive ? 'active-link':''}>Home</NavLink>
       <NavLink to={'/dashboard'} className={({isActive})=> isActive ? 'active-link':''}>Dashboard</NavLink>
-      <NavLink to={'/task'} className={({isActive})=> isActive ? 'active-link':''}>Tasks</NavLink>
+      <NavLink to={'/tasks'} className={({isActive})=> isActive ? 'active-link':''}>Tasks</NavLink>
       <NavLink to={'/login'} className={({isActive})=> isActive ? 'active-link':''}>Login</NavLink>
     </nav>
   )

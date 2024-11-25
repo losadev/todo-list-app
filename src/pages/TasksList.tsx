@@ -1,62 +1,34 @@
-import { RootState } from "@reduxjs/toolkit/query";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { TaskProps } from "../types/tasks.type";
-import { addTask } from "../store/tasksSlicer";
-import Task from "../components/Task";
-import '../styles/TaskList.css';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import Paper from '@mui/material/Paper';
+import { TaskProps } from '../types/tasks.type';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 
-const TasksList = () => {
-  const tasks = useSelector((state: RootState)=>state.tasks);
-  const dispatch = useDispatch();
-  const [newTaskName, setNewTaskName] = useState<string>('');
-  const [newTaskDescription, setNewTaskDescription] = useState<string>('');
+const columns: GridColDef[] = [
+  { field: 'name', headerName: 'Name', width: 180 },
+  { field: 'description', headerName: 'Description', width: 320 },
+  { field: 'date', headerName: 'Date', width: 100 },
+  {field: 'completed',headerName: 'Completed',width: 100,type: 'boolean',},
+];
 
-  const handleCreateTask = () => {
-    if(newTaskName && newTaskDescription) {
-      const today = new Date();
-      const todayString = today.toISOString().split('T')[0];
-      
-      const newTask:TaskProps = {
-        name: newTaskName,
-        description:newTaskDescription,
-        date: todayString,
-        completed: false
-      }
-      dispatch(addTask(newTask));
-      setNewTaskDescription('');
-      setNewTaskName('');
-    }
-  }
-
+export default function DataTable() {
+  const tasks = useSelector((state:RootState)=> state.tasks.data);
   return (
     <div className="container-xl">
-      <h1>Welcome @user</h1>
-      <div className="container-add-task">
-        <p>
-          <label htmlFor="name">Name*</label>
-          <input type="text" value={newTaskName} onChange={e => setNewTaskName(e.target.value)}/>
-        </p>
-        <p>
-          <label htmlFor="name">Description*</label>
-          <input type="text" value={newTaskDescription} onChange={e => setNewTaskDescription(e.target.value)}/>
-        </p>
-        <div className="btn-add-task">
-          <button onClick={handleCreateTask}>Add task</button>
-        </div>
-      </div>
-      
-      <div className="container-task-list">
-        <ul>
-          {tasks.data.map((task:TaskProps, index:number)=> (
-            <li key={index}>
-              <Task {...task}/>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <h1>List of tasks</h1>
+      <Paper sx={{ height: 400, width: '100%' }}>
+        <DataGrid
+          rows={tasks.map((task: TaskProps, index:number) => ({ id: index + 1, ...task }))}
+          columns={columns}
+          initialState={{
+            pagination: { paginationModel: { page: 0, pageSize: 5 } },
+          }}
+          pageSizeOptions={[5, 10]}
+          checkboxSelection
+          sx={{ border: 0 }}
+        />
+      </Paper>
     </div>
-  )
+  );
 }
 
-export default TasksList;

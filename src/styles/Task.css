@@ -1,10 +1,16 @@
 body {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.container-xl {
+  background-color: aqua;
 }
 
 .container-add-task {
   display: flex;
+  flex-direction: column;
   gap: 16px;
+  width: 50%;
 }
 
 .container-btn {
@@ -14,8 +20,12 @@ body {
 
 p {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 16px;
+}
+
+p + p {
+  margin-top: 16px;
 }
 
 .container-add-task > button {
@@ -25,16 +35,6 @@ p {
 .btn-add-task {
   display: flex;
   justify-content: center;
-}
-
-.btn-add-task button {
-  font-size: 1.2rem;
-  padding: 8px;
-  border-radius: 3px;
-  border: none;
-  margin-top: 15px;
-  background-color: red;
-  color: white;
 }
 
 li {
