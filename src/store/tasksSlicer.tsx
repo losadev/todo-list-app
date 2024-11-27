@@ -8,14 +8,30 @@ const tasksSlice = createSlice({
     addTask: (state, action:PayloadAction<TaskProps>)=> {
       state.data.push(action.payload);
     },
-      updateTask: (state, actions)=> {
-
+    updateTask: (state, action: PayloadAction<TaskProps>)=> {
+      const {id, name, description} = action.payload;   
+      const task = state.data.find((task)=> task.id === id);
+      if(task){
+        task.name = name;
+        task.description = description;
+      }
     },
-      deleteTask: (state, action:PayloadAction<number>)=> {
-        
+    deleteTask: (state, action:PayloadAction<number>)=> {
+        const id = action.payload;
+        const tasks = state.data.filter(task => task.id !== id);
+        state.data = tasks;
     },
-      toggleComplete: (state, actions)=> {
-
+    toggleComplete: (state, action)=> {
+      const id = action.payload;
+      const task = state.data.find((task)=> task.id === id);
+      
+      if(task){
+        if(task.completed === true) {
+          task.completed = false;
+        }else {
+          task.completed = true;
+        }
+      }
     },
   }
 })

@@ -1,4 +1,5 @@
 export interface TaskProps {
+  id:number
   name: string,
   description: string,
   date: string,
@@ -11,4 +12,10 @@ export interface TaskState {
 
 export const initialState:TaskState = {
   data: []
+}
+
+export interface TableTaskProps {
+  handleChangeCompleted: (id:number)=>void;
+  handleClickDelete: (id:number)=>void;
+  tasks: TaskProps[];
 }
