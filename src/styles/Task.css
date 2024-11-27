@@ -1,0 +1,42 @@
+body {
+  font-size: 1.2rem;
+}
+
+.container-xl {
+  background-color: aqua;
+}
+
+.container-add-task {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 50%;
+}
+
+.container-btn {
+  display: flex;
+  
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+p + p {
+  margin-top: 16px;
+}
+
+.container-add-task > button {
+  width: 5.5em;
+} 
+
+.btn-add-task {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+}

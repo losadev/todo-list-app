@@ -5,21 +5,25 @@ import { Routes } from 'react-router'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
-import Tasks from './pages/Tasks'
+import { Provider } from 'react-redux'
+import store from './store/store'
+import DataTable from './pages/TasksList'
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/dashboard' element={<Dashboard />}/>
-          <Route path='/tasks' element={<Tasks />}/>
-          <Route path='/login' element={<Login />}/>
-        </Routes>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Home />}/>
+            <Route path='/dashboard' element={<Dashboard />}/>
+            <Route path='/tasks' element={<DataTable />}/>
+            <Route path='/login' element={<Login />}/>
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </>
   )
 }
