@@ -1,17 +1,21 @@
 .menu {
   display: flex;
-  gap: 16px;
+  width: 100vw;
   justify-content: center;
+  background-color: #34495e;
 }
 
 a {
   text-decoration: none;
   font-size: 1.5rem;
-  padding: 16px 7px;
-  color: black;
+  padding: 26px 16px;
+  color: #f1f1f1;
   font-weight: 500;
 }
 
 .active-link {
-  border-bottom: 1px solid;
+  border-bottom: 7px solid #1abc9c;
+}
+a:hover {
+ color: #1abc9c;
 }

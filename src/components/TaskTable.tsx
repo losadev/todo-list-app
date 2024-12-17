@@ -3,7 +3,7 @@ import { DataGrid, GridColDef, GridDeleteIcon } from "@mui/x-data-grid";
 import EditIcon from '@mui/icons-material/Edit';
 import { TableTaskProps, TaskProps } from "../types/tasks.type";
 
-const TaskTable = ({handleChangeCompleted, handleClickDelete, tasks}:TableTaskProps) => {
+const TaskTable = ({handleChangeCompleted, handleClickDelete,openModal ,tasks}:TableTaskProps) => {
   
    const columns: GridColDef[] = [
     {field: 'completed',headerName: 'Completed',width: 100,type: 'boolean',renderCell: (params) => (
@@ -35,7 +35,7 @@ const TaskTable = ({handleChangeCompleted, handleClickDelete, tasks}:TableTaskPr
       />
       <EditIcon
         style={{ cursor: 'pointer', color: 'blue' }}
-        onClick={(params.row.id)}
+        onClick={()=> openModal(params.row.id)}
       />
     </div>
   ),},
