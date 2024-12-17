@@ -8,7 +8,7 @@ const tasksSlice = createSlice({
     addTask: (state, action:PayloadAction<TaskProps>)=> {
       state.data.push(action.payload);
     },
-    updateTask: (state, action: PayloadAction<TaskProps>)=> {
+    updateTask: (state, action: PayloadAction<{ id: number; name: string; description: string }>)=> {
       const {id, name, description} = action.payload;   
       const task = state.data.find((task)=> task.id === id);
       if(task){
