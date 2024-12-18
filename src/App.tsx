@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
 import { Provider } from 'react-redux'
 import store from './store/store'
-import DataTable from './pages/TasksList'
+import Tasks from './pages/Tasks'
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />}/>
             <Route path='/dashboard' element={<Dashboard />}/>
-            <Route path='/tasks' element={<DataTable />}/>
+            <Route path='/tasks' element={<Tasks />}/>
             <Route path='/login' element={<Login />}/>
           </Routes>
         </BrowserRouter>

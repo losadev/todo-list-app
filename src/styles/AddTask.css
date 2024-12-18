@@ -10,7 +10,6 @@
   position: relative;
   z-index: auto; /* Elimina el -1 */
 
-
 }
 
 .container-add-task {
@@ -50,6 +49,7 @@ p + p {
 .btn-add-task button:hover {
   background-color: #1abc9cc2;
   color:  #34495e;
+  cursor: pointer;
 }
 .error-title {
   margin-bottom: 17px;

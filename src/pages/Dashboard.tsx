@@ -1,9 +1,10 @@
-import Form from "./Form";
+import AddTask from "../components/AddTask";
+
 
 const Dashboard = () => {
   return (
     <>
-      <Form />
+      <AddTask />
     </>
   )
 }
