@@ -3,7 +3,7 @@ import '../styles/TaskList.css';
 import { deleteTask, toggleComplete } from '../store/tasksSlicer';
 import TaskTable from '../components/TaskTable';
 import { RootState } from '../store/store';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import Modal from '../modal/Modal';
 
 const TaskList = () => {
@@ -11,9 +11,9 @@ const TaskList = () => {
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  const handleChangeCompleted = (id: number) => {
+  const handleChangeCompleted = useCallback((id: number) => {
     dispatch(toggleComplete(id));
-  };
+  },[dispatch]);
   
   const handleClickDelete = (id:number) => {
     dispatch(deleteTask(id));
