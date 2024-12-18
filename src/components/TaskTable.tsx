@@ -12,7 +12,7 @@ const TaskTable = ({handleChangeCompleted, handleClickDelete,openModal ,tasks}:T
           onChange={()=> handleChangeCompleted(params.row.id)}/>
       ),
     },
-    { field: 'name', headerName: 'Name', width: 180, renderCell: (params)=> (
+    { field: 'title', headerName: 'Title', width: 180, renderCell: (params)=> (
       <span style={{textDecoration: params.row.completed ? 'line-through':''}}>
         {params.value}
       </span>

@@ -1,9 +1,9 @@
-import TasksList from "./AddTasks";
+import Form from "./Form";
 
 const Dashboard = () => {
   return (
     <>
-      <TasksList />
+      <Form />
     </>
   )
 }
