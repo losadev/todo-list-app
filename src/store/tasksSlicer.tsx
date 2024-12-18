@@ -12,7 +12,7 @@ const tasksSlice = createSlice({
       const {id, name, description} = action.payload;   
       const task = state.data.find((task)=> task.id === id);
       if(task){
-        task.name = name;
+        task.title = name;
         task.description = description;
       }
     },

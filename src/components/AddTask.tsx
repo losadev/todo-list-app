@@ -3,11 +3,11 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { addTask } from "../store/tasksSlicer";
 import { FormFields, TaskProps } from "../types/tasks.type";
-import '../styles/Form.css';
+import '../styles/AddTask.css';
 import { useState } from "react";
 import CheckIcon from '@mui/icons-material/Check';
 
-const Form = () => {
+const AddTask = () => {
   const [taskAdded, setTaskAdded] = useState<boolean>(false);
   const {register, handleSubmit,setValue, formState: {errors}} = useForm<FormFields>({
     defaultValues: {
@@ -44,7 +44,7 @@ const Form = () => {
           <div className="container-add-task">
             <p>
               <label htmlFor="name">Name*</label>
-              <TextField id="filled-basic" label="Name..." variant="filled" {...register('title',{
+              <TextField style={{color: "#34495e"}} id="filled-basic" label="Name..." variant="filled" {...register('title',{
                 required: 'Title is required'
               })}/>
             </p>
@@ -66,4 +66,4 @@ const Form = () => {
   );
 }
 
-export default Form;
+export default AddTask;

@@ -1,0 +1,72 @@
+.container-table {
+  background-color: aliceblue;
+  padding: 40px;
+  border-radius: 5px;
+}
+h1 {
+  text-align: center;
+}
+
+th {
+  text-align: center;
+}
+td {
+  text-align: left;
+}
+tr {
+  display: flex;
+}
+table {
+  display: flex;
+  flex-direction: column;
+  border-collapse: collapse;
+  width: 50vw;
+  box-shadow: 1px 1px 5px ;
+}
+th,td {
+  flex: 1;
+  padding: 10px;
+}
+th:nth-child(2) {
+  flex: 2;
+}
+th {
+  background-color: #1abc9c;
+}
+.tbody tr td:nth-child(2) {
+  flex: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}
+tr:nth-child(odd) { 
+  background-color: lightgray;
+}
+.thead {
+  display: flex;
+}
+#btn-edit {
+  color: darkblue;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#btn-delete {
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.container-table button {
+  background-color: inherit;
+  border: none;
+}
+.container-btn {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.tbody td:nth-last-child(2), .tbody td:nth-last-child(3)  {
+  text-align: center;
+}
+input[type=checkbox] {
+  transform: scale(1.2);
+}
