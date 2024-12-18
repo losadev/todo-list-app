@@ -22,7 +22,7 @@ const TasksList = () => {
       
       const newTask:TaskProps = {
         id: Date.now(),
-        name: newTaskName,
+        title: newTaskName,
         description:newTaskDescription,
         date: todayString,
         completed: false

@@ -1,6 +1,6 @@
 export interface TaskProps {
   id:number
-  name: string,
+  title: string,
   description: string,
   date: string,
   completed: boolean
@@ -29,3 +29,7 @@ export interface ModalProps {
   taskData: { name: string; description: string }; // Datos de la tarea a editar
 }
 
+export type FormFields = {
+  title: string
+  description: string
+}
