@@ -17,16 +17,16 @@ const TaskList = memo(({handleChangeCompleted, handleClickDelete,openModal,tasks
       </div>
       <div className="tbody">
         {tasks.map((task,index)=> (
-          <tr key={index}>
+          <tr className={task.completed ? "task-complete":""} key={index}>
             <td>{task.title}</td>
             <td>{task.description}</td>
             <td>{task.date}</td>
             <td>
-              <input type="checkbox" name="completed" onChange={() => handleChangeCompleted(index)}/>
+              <input type="checkbox" name="completed" checked={task.completed} onChange={() => handleChangeCompleted(task.id)}/>
             </td>
             <td>
               <div className="container-btn">
-                <button onClick={()=> handleClickDelete(index)} ><MdDelete id="btn-delete"/></button>
+                <button onClick={()=> handleClickDelete(task.id)} ><MdDelete id="btn-delete"/></button>
                 <button onClick={()=> openModal(index)} ><FaEdit id="btn-edit"/></button> 
               </div>
             </td>

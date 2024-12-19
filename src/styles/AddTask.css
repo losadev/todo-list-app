@@ -19,6 +19,7 @@
   background-color: aliceblue;
   padding: 40px;
   border-radius: 5px;
+  box-shadow: 1px 1px 5px ;
 }
 p {
   display: flex;

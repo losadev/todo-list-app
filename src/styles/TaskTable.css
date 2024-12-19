@@ -2,6 +2,7 @@
   background-color: aliceblue;
   padding: 40px;
   border-radius: 5px;
+  box-shadow: 1px 1px 5px ;
 }
 h1 {
   text-align: center;
@@ -21,7 +22,8 @@ table {
   flex-direction: column;
   border-collapse: collapse;
   width: 50vw;
-  box-shadow: 1px 1px 5px ;
+  max-height: 30vh;
+  min-height: 30vh;
 }
 th,td {
   flex: 1;
@@ -32,6 +34,10 @@ th:nth-child(2) {
 }
 th {
   background-color: #1abc9c;
+  color: #19191a;
+}
+h1 {
+  color: #19191a;
 }
 .tbody tr td:nth-child(2) {
   flex: 2;
@@ -40,10 +46,11 @@ th {
   text-wrap: nowrap;
 }
 tr:nth-child(odd) { 
-  background-color: lightgray;
+  background-color: #E0E0E0;
 }
 .thead {
   display: flex;
+  position: sticky;
 }
 #btn-edit {
   color: darkblue;
@@ -59,6 +66,10 @@ tr:nth-child(odd) {
   background-color: inherit;
   border: none;
 }
+.tbody {
+  overflow-y: scroll;
+  scrollbar-color:#34495e transparent; /* Cambia los colores aquí */
+}
 .container-btn {
   display: flex;
   gap: 5px;
@@ -69,4 +80,26 @@ tr:nth-child(odd) {
 }
 input[type=checkbox] {
   transform: scale(1.2);
+}
+.task-complete {
+  text-decoration: line-through;
+  color: #58585c;
+}
+
+.container-filters {
+  padding: 10px 0px;
+  display: flex;
+  gap: 15px;
+}
+.container-filters button {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+.container-filters button:hover {
+    text-decoration: underline;
 }

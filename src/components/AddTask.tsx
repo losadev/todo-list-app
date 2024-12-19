@@ -44,7 +44,7 @@ const AddTask = () => {
           <div className="container-add-task">
             <p>
               <label htmlFor="name">Name*</label>
-              <TextField style={{color: "#34495e"}} id="filled-basic" label="Name..." variant="filled" {...register('title',{
+              <TextField id="filled-basic" label="Name..." variant="filled" {...register('title',{
                 required: 'Title is required'
               })}/>
             </p>
