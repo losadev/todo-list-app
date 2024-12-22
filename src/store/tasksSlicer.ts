@@ -33,11 +33,6 @@ const tasksSlice = createSlice({
         }
       }
     },
-    filterTasksCompleted: (state,action:PayloadAction<boolean>) => {
-      const completed = state.data.find
-      const tasks = state.data.filter(task => task.completed === true);
-      state.data = tasks;
-    }
   }
 })
 
