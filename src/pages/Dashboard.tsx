@@ -11,7 +11,7 @@ import { FaTasks } from "react-icons/fa";
 
 
 const Dashboard = () => {
-  let tasks = useSelector((state: RootState) => state.tasks.data);
+  const tasks = useSelector((state: RootState) => state.tasks.data);
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [filter,setFilter] = useState<string>('all');
