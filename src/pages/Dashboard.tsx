@@ -16,6 +16,7 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [taskCompleted, setTaskCompleted] = useState<TaskProps[] | null>(null);
+  const [taskIncompleted, setTaskIncompleted] = useState<TaskProps[] | null>(null);
 
   const handleChangeCompleted = useCallback((id: number) => {
     dispatch(toggleComplete(id));
@@ -40,7 +41,7 @@ const Dashboard = () => {
   }
   const handlerFilterIncompleted = () => {
     const tasksIncompleted = tasks.filter((task) => task.completed !== true);
-    setTaskCompleted(tasksCompleted);
+    setTaskIncompleted(tasksIncompleted);
   }
 
   return (
@@ -50,7 +51,7 @@ const Dashboard = () => {
         <h4>Filters</h4>
         <div className="container-filters">
           <button style={{backgroundColor:"lightgreen"}} className="btn-filter-complete" onClick={handlerFilterCompleted}>Completed <IoCheckmarkDoneCircleSharp style={{color:'green'}} /></button>
-          <button style={{backgroundColor:"rgb(255, 114, 114)"}}>Incompleted <RiProgress3Line style={{color:"red"}}/></button>
+          <button style={{backgroundColor:"rgb(255, 114, 114)"}} onClick={handlerFilterIncompleted}>Incompleted <RiProgress3Line style={{color:"red"}}/></button>
           <button style={{backgroundColor:'lightgray'}}>All <FaTasks/></button>
         </div>
         <TaskList handleChangeCompleted={handleChangeCompleted} handleClickDelete={handleClickDelete} openModal={openModal} tasks={taskCompleted ? taskCompleted:taskIncompleted ? taskIncompleted: tasks}/>
