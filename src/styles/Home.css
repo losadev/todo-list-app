@@ -24,11 +24,3 @@
   width: 600px;
   border-radius: 5px;
 }
-.w-hr {
-  display: flex;
-  justify-content: center;
-}
-hr {
-  text-align: center;
-  width: 60vw;
-}

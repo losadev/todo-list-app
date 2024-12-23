@@ -24,7 +24,10 @@
   justify-content: center;
   margin-top: 26px;
 }
+.btn-add-task-modal :first-child {
+  border: 1px solid;
+}
 .btn-add-task-modal :nth-child(2) {
-  color: red;
-  border: 1px solid red;
+  color: #ff0000;
+  border: 1px solid #ff0000;
 }

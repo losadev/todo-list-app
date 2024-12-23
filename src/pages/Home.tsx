@@ -14,12 +14,6 @@ const Home = () => {
         
         </div>
       </main>
-      <div className="w-hr">
-        <hr />
-      </div>
-      <footer>
-
-      </footer>
     </>
   )
 }

@@ -17,9 +17,10 @@ export const initialState:TaskState = {
 export interface TableTaskProps {
   handleChangeCompleted: (id: number) => void;
   handleClickDelete: (id: number) => void;
-  openModal: (id:number)=>void;
+  openEditModal: (task: TaskProps) => void; 
   tasks: TaskProps[];
 }
+
 
 export interface ModalProps {
   open: boolean;

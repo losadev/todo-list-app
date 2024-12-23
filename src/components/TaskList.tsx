@@ -3,8 +3,8 @@ import { TableTaskProps } from "../types/tasks.type";
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 
-const TaskList = memo(({handleChangeCompleted, handleClickDelete,openModal,tasks}:TableTaskProps) => {
-
+const TaskList = memo(({handleChangeCompleted, handleClickDelete,openEditModal,tasks}:TableTaskProps) => {
+  
   return (
   <>
     <table>
@@ -27,13 +27,15 @@ const TaskList = memo(({handleChangeCompleted, handleClickDelete,openModal,tasks
             <td>
               <div className="container-btn">
                 <button onClick={()=> handleClickDelete(task.id)} ><MdDelete id="btn-delete"/></button>
-                <button onClick={()=> openModal(index)} ><FaEdit id="btn-edit"/></button> 
+                <button onClick={()=> {
+                  openEditModal(task);
+                }}><FaEdit id="btn-edit"/></button> 
               </div>
             </td>
           </tr>
         ))}
       </div>
-    </table> 
+    </table>
   </>
   )
 });
